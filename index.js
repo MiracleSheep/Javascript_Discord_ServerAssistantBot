@@ -1,4 +1,5 @@
 const Discord = require('discord.js');
+const env = require('dotenv').config()
 var lastmsg;
 var lm;
 
@@ -6,7 +7,7 @@ var lm;
 
 const client = new Discord.Client();
 
-const prefix = '-';
+const prefix = process.env.PREFIX;
 
 const fs = require('fs');
 
@@ -38,14 +39,16 @@ client.on('message',message => {
         client.commands.get('ping').execute(message, args);
     } else if (command == 'help' || command == 'h') {
         client.commands.get('help').execute(message,args);
-    } else if (command == 'web' || command == 'h') {
+    } else if (command == 'web') {
         client.commands.get('link').execute(message,args);
-    } else if (command == 'news' || command == 'h') {
+    } else if (command == 'news') {
         client.commands.get('news').execute(message,args);
     }
 
 });
 
+//Gets token from env variables
 
-client.login('insert token here');
+
+client.login(process.env.DISCORD_TOKEN);
 
