@@ -23,7 +23,7 @@ Features include:
 * PREFIX (the prefix you want the discord bot to have)
 * LINK (the link you want the bot to post)
 * ROLE (the role id of the news role)
-4. Build the image in the directory with ``docker build -t assistantbot .``
+4. Build the image in the directory with ``docker build -t assistantbot --name [name] .``
 5. Run the image
 6. Enjoy!
 
