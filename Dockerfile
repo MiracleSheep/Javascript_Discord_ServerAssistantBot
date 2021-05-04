@@ -11,4 +11,4 @@ RUN npm install
 # Our precious bot
 COPY . /usr/src/bot
 
-CMD ["node", "index.js
+CMD ["node", "index.js"]
