@@ -11,7 +11,7 @@ Features include:
 
 ## How to set up
 
-### Requrements
+### Requirements
 * Docker
 * That is pretty much it
 
