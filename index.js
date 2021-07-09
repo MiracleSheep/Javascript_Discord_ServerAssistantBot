@@ -5,7 +5,7 @@ var lm;
 
 
 
-const client = new Discord.Client();
+const client = new Discord.Client({ partials: ["MESSAGE", "CHANNEL", "REACTION" ]});
 
 const prefix = process.env.PREFIX;
 
@@ -30,6 +30,11 @@ client.once('ready',  () => {
 client.on('message',message => {
  
 
+    if (message.channel.id == '825821287192199288') {
+
+        
+    }
+
     if (!message.content.startsWith(prefix)) return;
 
     const args = message.content.slice(prefix.length).split(/ +/);
@@ -43,7 +48,9 @@ client.on('message',message => {
         client.commands.get('link').execute(message,args);
     } else if (command == 'news') {
         client.commands.get('news').execute(message,args);
-    }
+    }else if (command === 'reactionrole') {
+        client.commands.get('reactionrole').execute(message, args, Discord, client);
+    } 
 
 });
 

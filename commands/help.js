@@ -4,7 +4,7 @@ module.exports = {
     description: "This is a help command",
     execute(message,args) {
 
-        const embed = {
+         const embed = {
             color: "#0099ff",
             title: "Assistant bot help page",
             //url: 'https://discord.js.org',
@@ -50,7 +50,7 @@ module.exports = {
           };
 
           message.delete(); 
-        message.channel.send({ embed });
+         message.channel.send({ embed });
 
     }
 
