@@ -29,11 +29,6 @@ module.exports = {
                 inline: false,
               },
               {
-                name: "3: Enable/disable notifications of the news",
-                value: "Do -news",
-                inline: false,
-              },
-              {
                 name: "4: Server Home Page",
                 value: "Do -web",
                 inline: false,

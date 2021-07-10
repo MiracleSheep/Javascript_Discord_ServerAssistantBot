@@ -46,8 +46,6 @@ client.on('message',message => {
         client.commands.get('help').execute(message,args);
     } else if (command == 'web') {
         client.commands.get('link').execute(message,args);
-    } else if (command == 'news') {
-        client.commands.get('news').execute(message,args);
     }else if (command === 'reactionrole') {
         client.commands.get('reactionrole').execute(message, args, Discord, client);
     } 

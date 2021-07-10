@@ -3,19 +3,19 @@ module.exports = {
     name: 'reactionrole',
     description: "Sets up a reaction role message!",
     async execute(message, args, Discord, client) {
-        const channel = 'YOUR_CHANNEL';
-        const yellowTeamRole = message.guild.roles.cache.find(role => role.name === "YOUR_ROLE");
-        const blueTeamRole = message.guild.roles.cache.find(role => role.name === "YOUR_ROLE");
+        const channel = '825821287192199288';
+        const yellowTeamRole = message.guild.roles.cache.find(role => role.name === "Server News");
+        const blueTeamRole = message.guild.roles.cache.find(role => role.name === "Minecraft");
  
-        const yellowTeamEmoji = 'YOUR_EMOJI';
-        const blueTeamEmoji = 'YOUR_EMOJI';
+        const yellowTeamEmoji = '🖥️';
+        const blueTeamEmoji = '⛏️';
  
         let embed = new Discord.MessageEmbed()
             .setColor('#e42643')
-            .setTitle('Choose a team to play on!')
-            .setDescription('Choosing a team will allow you to interact with your teammates!\n\n'
-                + `${yellowTeamEmoji} for yellow team\n`
-                + `${blueTeamEmoji} for blue team`);
+            .setTitle('React to join a group for notifications!')
+            .setDescription('Reacting to an emojii will add you to the notifications of that group\n\n'
+                + `${yellowTeamEmoji} for Server related notifications.\n`
+                + `${blueTeamEmoji} for Minecraft related notifications.`);
  
         let messageEmbed = await message.channel.send(embed);
         messageEmbed.react(yellowTeamEmoji);
