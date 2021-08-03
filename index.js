@@ -12,14 +12,7 @@ const prefix = process.env.PREFIX;
 
 const fs = require('fs');
 
-//This stores information relating to the connection to the database
-var con = mysql.createPool({  
-    host: process.env.MYSQL_HOST,  
-    user: process.env.MYSQL_USERNAME,  
-    password: process.env.MYSQL_ROOT_PASSWORD,
-    port: process.env.MYSQL_LOCAL_PORT,
-    database: process.env.MYSQL_DATABASE
-  });  
+
 
 client.commands = new Discord.Collection();
 

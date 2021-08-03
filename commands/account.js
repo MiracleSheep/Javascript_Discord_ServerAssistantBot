@@ -4,6 +4,16 @@ module.exports = {
     description: "This is a command that allows a user to request a new account on the website",
     execute(message,args) {
         
+      //This stores information relating to the connection to the database
+      var con = mysql.createConnection({  
+        host: process.env.MYSQL_HOST,  
+        user: process.env.MYSQL_USERNAME,  
+        password: process.env.MYSQL_ROOT_PASSWORD,
+        port: process.env.MYSQL_LOCAL_PORT,
+        database: process.env.MYSQL_DATABASE
+      });  
+
+      con.connect();
         
         var i = message.content.indexOf(" ");
         var username = message.author.toString();
@@ -54,7 +64,7 @@ module.exports = {
         message.channel.send('This discord user is not viable to receive an account on the server website ');
       }
         
-
+      con.end();
     }
 
 }
