@@ -59,7 +59,7 @@ client.on('message',message => {
     }else if (command === 'reactionrole') {
         client.commands.get('reactionrole').execute(message, args, Discord, client);
     } else if (command === 'account') {
-        client.commands.get('accounts').execute(message, args, Discord, client);
+        client.commands.get('account').execute(message, args, Discord, client);
     } 
 
 });
