@@ -4,21 +4,12 @@ module.exports = {
     description: "This is a command that allows a user to request a new account on the website",
     execute(message,args) {
         
-      //This stores information relating to the connection to the database
-      var con = mysql.createConnection({  
-        host: process.env.MYSQL_HOST,  
-        user: process.env.MYSQL_USERNAME,  
-        password: process.env.MYSQL_ROOT_PASSWORD,
-        port: process.env.MYSQL_LOCAL_PORT,
-        database: process.env.MYSQL_DATABASE
-      });  
-
-      con.connect();
         
         var i = message.content.indexOf(" ");
         var username = message.author.toString();
-        //const memberRole = message.guild.roles.cache.find(role => role.name === "Member");
+        const memberRole = message.guild.roles.cache.find(role => role.name === "Member");
         var user = message.author.id;
+        console.log(i)
         if (i == undefined || i == -1 || i == null) {
           message.channel.send('This is not a valid command.');
           message.channel.send('To learn how to use the poll bot, do !help.')
@@ -31,12 +22,12 @@ module.exports = {
 
         console.log(args3[0])
         console.log(args3[1])
+        console.log(args3.length)
 
 
 
 
-
-        if(message.member.roles.cache.some(role => role.name === 'Member')) {
+        if(message.member.roles.has(memberRole)) {
 
           message.delete(); 
 
@@ -61,10 +52,10 @@ module.exports = {
 
       } else {
         message.delete(); 
-        message.channel.send('This discord user is not viable to receive an account on the server website ');
+        message.channel.send('This discord user is not viable to receive an account');
       }
         
-      con.end();
+
     }
 
 }
