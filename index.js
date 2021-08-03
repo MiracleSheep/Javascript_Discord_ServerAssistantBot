@@ -91,7 +91,7 @@ client.on('message',message => {
           con.query("INSERT INTO credentials VALUES(? , ? , ?);", [user,args3[0],args3[1]], function (err, result) {
             if (err) {message.channel.send('There was an error creating your account.')
           } else {
-            message.channel.send('@' + username + ',your account was created successfully!')
+            message.channel.send(username + ',your account was created successfully!')
           }
             
         }) 
