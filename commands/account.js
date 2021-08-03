@@ -6,7 +6,9 @@ module.exports = {
         
         
         var i = message.content.indexOf(" ");
-        var user = message.author.toString();
+        var username = message.author.toString();
+        const memberRole = message.guild.roles.cache.find(role => role.name === "Member");
+        var user = message.author.id;
         console.log(i)
         if (i == undefined || i == -1 || i == null) {
           message.channel.send('This is not a valid command.');
@@ -23,19 +25,23 @@ module.exports = {
         console.log(args3.length)
 
 
-        message.delete(); 
+
+
+        if(message.member.roles.has(memberRole)) {
+
+          message.delete(); 
 
         if (args3.length == 2) {
+
+          
             
-          con.query("INSERT INTO credentials VALUES(? , ? , ?);", [message.author.id,args3[0],args3[1]], function (err, result) {
+          con.query("INSERT INTO credentials VALUES(? , ? , ?);", [user,args3[0],args3[1]], function (err, result) {
             if (err) {message.channel.send('There was an error creating your account.')
           } else {
             message.channel.send(user + ',your account was created successfully!')
           }
             
         }) 
-        
-
 
         } else {
           message.channel.send('This is not a valid command.');
@@ -43,6 +49,11 @@ module.exports = {
           message.channel.send('To learn how to use the assistant bot, do -help.')
 
         }
+
+      } else {
+        message.delete(); 
+        message.channel.send('This discord user is not viable to receive an account on the server website ');
+      }
         
 
     }
