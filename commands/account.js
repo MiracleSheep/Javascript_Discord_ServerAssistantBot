@@ -7,9 +7,8 @@ module.exports = {
         
         var i = message.content.indexOf(" ");
         var username = message.author.toString();
-        const memberRole = message.guild.roles.cache.find(role => role.name === "Member");
+        //const memberRole = message.guild.roles.cache.find(role => role.name === "Member");
         var user = message.author.id;
-        console.log(i)
         if (i == undefined || i == -1 || i == null) {
           message.channel.send('This is not a valid command.');
           message.channel.send('To learn how to use the poll bot, do !help.')
@@ -22,12 +21,12 @@ module.exports = {
 
         console.log(args3[0])
         console.log(args3[1])
-        console.log(args3.length)
 
 
 
 
-        if(message.member.roles.has(memberRole)) {
+
+        if(message.member.roles.cache.some(role => role.name === 'Member')) {
 
           message.delete(); 
 
