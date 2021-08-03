@@ -65,7 +65,7 @@ client.on('message',message => {
         var user = message.author.id;
         if (i == undefined || i == -1 || i == null) {
           message.channel.send('This is not a valid command.');
-          message.channel.send('To learn how to use the poll bot, do !help.')
+          message.channel.send('To learn how to use the assistant bot, do !help.')
           return;
         } else {
         var args2 = message.content.substring(i+1);
