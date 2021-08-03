@@ -29,8 +29,13 @@ module.exports = {
                 inline: false,
               },
               {
-                name: "4: Server Home Page",
+                name: "3: Server Web Page",
                 value: "Do -web",
+                inline: false,
+              },
+              {
+                name: "4: Account Request",
+                value: "Do -account <username>;<password>",
                 inline: false,
               },
             ],

@@ -1,4 +1,5 @@
 const Discord = require('discord.js');
+var mysql = require('mysql2');  
 const env = require('dotenv').config()
 var lastmsg;
 var lm;
@@ -10,6 +11,15 @@ const client = new Discord.Client({ partials: ["MESSAGE", "CHANNEL", "REACTION" 
 const prefix = process.env.PREFIX;
 
 const fs = require('fs');
+
+//This stores information relating to the connection to the database
+var con = mysql.createPool({  
+    host: process.env.MYSQL_HOST,  
+    user: process.env.MYSQL_USERNAME,  
+    password: process.env.MYSQL_ROOT_PASSWORD,
+    port: process.env.MYSQL_LOCAL_PORT,
+    database: process.env.MYSQL_DATABASE
+  });  
 
 client.commands = new Discord.Collection();
 
@@ -48,6 +58,8 @@ client.on('message',message => {
         client.commands.get('link').execute(message,args);
     }else if (command === 'reactionrole') {
         client.commands.get('reactionrole').execute(message, args, Discord, client);
+    } else if (command === 'account') {
+        client.commands.get('accounts').execute(message, args, Discord, client);
     } 
 
 });
