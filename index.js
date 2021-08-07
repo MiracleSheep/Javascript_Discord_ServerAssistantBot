@@ -58,6 +58,8 @@ client.on('message',message => {
         client.commands.get('link').execute(message,args);
     }else if (command === 'reactionrole') {
         client.commands.get('reactionrole').execute(message, args, Discord, client);
+    } else if (command === 'baa') {
+      client.commands.get('baa').execute(message, args, Discord, client);
     } else if (command === 'account') {
         var i = message.content.indexOf(" ");
         var username = message.author.toString();
