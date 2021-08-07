@@ -7,9 +7,8 @@ module.exports = {
         message.delete(); 
 
         const channel = '873617380822106192';
-        const yellowTeamRole = message.guild.roles.cache.find(role => role.name === "Server News");
-        const blueTeamRole = message.guild.roles.cache.find(role => role.name === "Minecraft");
-
+        const yellowTeamRole = message.guild.roles.cache.get("791727431039057941");
+        const blueTeamRole = message.guild.roles.cache.get("856600979285213274");
         const yellowTeamEmoji = '🖥️';
         const blueTeamEmoji = '⛏️';
  
