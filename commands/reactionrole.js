@@ -33,8 +33,10 @@ module.exports = {
             if (reaction.message.channel.id == channel) {
                 if (reaction.emoji.name === yellowTeamEmoji) {
                     await reaction.message.guild.members.cache.get(user.id).roles.add(yellowTeamRole);
+                    console.log("added to yellow")
                 }
                 if (reaction.emoji.name === blueTeamEmoji) {
+                    console.log("added to blue")
                     await reaction.message.guild.members.cache.get(user.id).roles.add(blueTeamRole);
                 }
             } else {
