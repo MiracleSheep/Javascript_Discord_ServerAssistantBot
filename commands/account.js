@@ -2,7 +2,7 @@ module.exports = {
 
     name: 'account',
     description: "This is a command that allows a user to request a new account on the website",
-    execute(message,args) {
+    execute(message,args,con) {
         
         
         var i = message.content.indexOf(" ");

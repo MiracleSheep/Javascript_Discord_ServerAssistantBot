@@ -38,6 +38,26 @@ module.exports = {
                 value: "Do -account <username>;<password>",
                 inline: false,
               },
+              {
+                name: "5: Add Birthday",
+                value: "Do -badd <@user>(or type me for yourself) <date>",
+                inline: false,
+              },
+              {
+                name: "6: Remove Birthday",
+                value: "Do -brm <@user>(or type me for yourself)",
+                inline: false,
+              },
+              {
+                name: "7: When is a Birthday",
+                value: "Do -bday <@user>(or type me for yourself)",
+                inline: false,
+              },
+              {
+                name: "8: Set Bot Status",
+                value: "Do -setstatus <status>",
+                inline: false,
+              },
             ],
             // image: {
             //   url: 'https://i.imgur.com/wSTFkRM.png',
