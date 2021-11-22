@@ -46,11 +46,28 @@ const job = schedule.scheduleJob('05 13 * * *', function(){
 function check() {
 
   //making a query to get birthdays in 14 days
-
+  con.query("SELECT * FROM birthday WHERE date = DATE_ADD(CURRENT_DATE, INTERVAL 14 DAY)", function (err, result, fields) {
+    if (err) {message.channel.send('There was an error getting the birthdays from the database.')
+  } else {
+    message.channel.send(result[0].date)
+  }
+  });
 
   //making a query to get birthdays in 7 days
+  con.query("SELECT * FROM birthday WHERE date = DATE_ADD(CURRENT_DATE, INTERVAL 7 DAY)", function (err, result, fields) {
+    if (err) {message.channel.send('There was an error getting the birthdays from the database.')
+  } else {
+    message.channel.send(result[0].date)
+  }
+  });
 
   //making a query to get birthdays today
+  con.query("SELECT * FROM birthday WHERE date = CURRENT_DATE", function (err, result, fields) {
+    if (err) {message.channel.send('There was an error getting the birthdays from the database.')
+  } else {
+    message.channel.send(result[0].date)
+  }
+  });
 
   
 }
