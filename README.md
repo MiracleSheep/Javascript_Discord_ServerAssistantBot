@@ -8,6 +8,7 @@ Features include:
 * A ping command
 * A news command which adds/removes users from a group which gets pinged when there is news of the minecraft server
 * A web command which posts the link to a website.
+* An entire birthday system which allows birthdays to be set up and removed.
 
 ## How to set up
 
