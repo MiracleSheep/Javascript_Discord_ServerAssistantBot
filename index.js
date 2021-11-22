@@ -1,8 +1,7 @@
 const Discord = require('discord.js');
 var mysql = require('mysql2');  
 const env = require('dotenv').config()
-var lastmsg;
-var lm;
+client.channels.cache.get('id')
 
 
 
@@ -36,6 +35,25 @@ client.once('ready',  () => {
     console.log("Bot is online");
 
 });
+
+//This is the cron function that checks birthdays everyday
+const job = schedule.scheduleJob('05 13 * * *', function(){
+  console.log("Time functuion called")
+  check()
+})
+
+//This is the function that checks for somebody's birthday
+function check() {
+
+  //making a query to get birthdays in 14 days
+
+
+  //making a query to get birthdays in 7 days
+
+  //making a query to get birthdays today
+
+  
+}
 
 client.on('message',message => {
  
