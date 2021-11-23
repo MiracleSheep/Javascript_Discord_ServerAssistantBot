@@ -75,7 +75,6 @@ module.exports = {
 
           } catch (error) {
             message.channel.send("There was an error getting the information of the requested user")
-            return
           }
 
           //getting the date

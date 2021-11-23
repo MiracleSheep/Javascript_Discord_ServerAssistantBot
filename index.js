@@ -49,7 +49,23 @@ function check() {
   con.query("SELECT * FROM birthday WHERE date = DATE_ADD(CURRENT_DATE, INTERVAL 14 DAY)", function (err, result, fields) {
     if (err) {message.channel.send('There was an error getting the birthdays from the database.')
   } else {
-    message.channel.send(result[0].date)
+    
+    //making a for loop to run through every entry in the results
+    for (i = 0 ; i < result.length ; i++) {
+      
+
+      try {
+
+        channel = result[i].channelid
+        client.channels.get(channel).send('It will be the bithday of @' + result[i].username + ' in 14 days');
+
+      } catch(error) {
+
+      }
+
+
+    }
+
   }
   });
 
@@ -57,7 +73,21 @@ function check() {
   con.query("SELECT * FROM birthday WHERE date = DATE_ADD(CURRENT_DATE, INTERVAL 7 DAY)", function (err, result, fields) {
     if (err) {message.channel.send('There was an error getting the birthdays from the database.')
   } else {
-    message.channel.send(result[0].date)
+        //making a for loop to run through every entry in the results
+        for (i = 0 ; i < result.length ; i++) {
+      
+
+          try {
+    
+            channel = result[i].channelid
+            client.channels.get(channel).send('It will be the bithday of @' + result[i].username + ' in 7 days');
+    
+          } catch(error) {
+    
+          }
+    
+    
+        }
   }
   });
 
@@ -65,7 +95,21 @@ function check() {
   con.query("SELECT * FROM birthday WHERE date = CURRENT_DATE", function (err, result, fields) {
     if (err) {message.channel.send('There was an error getting the birthdays from the database.')
   } else {
-    message.channel.send(result[0].date)
+        //making a for loop to run through every entry in the results
+        for (i = 0 ; i < result.length ; i++) {
+      
+
+          try {
+    
+            channel = result[i].channelid
+            client.channels.get(channel).send('Today is the bithday of @' + result[i].username + '!');
+    
+          } catch(error) {
+    
+          }
+    
+    
+        }
   }
   });
 
@@ -104,6 +148,8 @@ client.on('message',message => {
     } else if (command === 'bday') {
       client.commands.get('checkbirthday').execute(message, args, con, Discord, client);
     } else if (command === 'setstatus') {
+      client.commands.get('setstatus').execute(message, args, Discord, client);
+    } else if (command === 'blist') {
       client.commands.get('setstatus').execute(message, args, Discord, client);
     }
 });

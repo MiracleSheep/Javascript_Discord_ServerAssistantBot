@@ -54,8 +54,14 @@ module.exports = {
 
          //making a small shortcut if the person inputting the command wants their birthday to be addded
          if (args3[0] == "me") {
+
+          //getting the server id
+          server = message.guild.id
+          //getting the channel id
+          channel = message.channel.id
+
           //inserting the user's birthday into the database
-          con.query("INSERT INTO birthday VALUES(? ,?, ?);", [username,user,args3[1]], function (err, result) {
+          con.query("INSERT INTO birthday VALUES(? ,?, ?,?,?);", [username,user,args3[1],channel,server], function (err, result) {
             if (err) {message.channel.send('There was an error setting the birthday.')
           } else {
             message.channel.send('The birthday was added successfully!')
@@ -73,6 +79,10 @@ module.exports = {
             targetuser = message.guild.members.get(args3[0]).id
             //getting the id from the first argument
             targetusername = message.guild.members.get(args3[0]).displayName
+            //getting the server id
+            server = message.guild.id
+            //getting the channel id
+            channel = message.channel.id
 
 
           } catch (error) {
@@ -81,7 +91,7 @@ module.exports = {
           }
 
           //making the query to the database
-          con.query("INSERT INTO birthday VALUES(? ,? ,?);", [targetusername,targetuser,args3[1]], function (err, result) {
+          con.query("INSERT INTO birthday VALUES(? ,? ,?,?,?);", [targetusername,targetuser,args3[1],channel,server], function (err, result) {
             //error catching incase the request goes wrong
             if (err) {message.channel.send('There was an error setting the birthday.')
           } else {
