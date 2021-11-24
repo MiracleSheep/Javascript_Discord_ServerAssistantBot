@@ -102,7 +102,7 @@ function check() {
           try {
     
             channel = result[i].channelid
-            client.channels.get(channel).send('Today is the bithday of @' + result[i].username + '!');
+            client.channels.get(channel).send('@everyone Today is the bithday of @' + result[i].username + '!');
     
           } catch(error) {
     
