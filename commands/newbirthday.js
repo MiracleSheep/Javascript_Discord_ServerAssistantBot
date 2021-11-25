@@ -14,9 +14,6 @@ module.exports = {
 
         //variable that holds the user id for the person who sent the message
         var user = message.author.id
-
-        //variable that holds the role that is neccesary for somebody to use this command
-        const memberRole = message.guild.roles.cache.find(role => role.name === "Member")
         
         //Checking if there is a space after the command to see if there are any parameters
         if (message.content.indexOf(" ") == undefined || message.content.indexOf(" ") == -1 || message.content.indexOf(" ") == null) {
@@ -44,7 +41,7 @@ module.exports = {
 
 
         //checking if the user has the correct role to be allowed to use this command
-        if(message.member.roles.has(memberRole)) {
+        if(message.member.roles.cache.some(role => role.name === 'Member')) {
           
           //deleting the command so the channel is cleaner
           message.delete()
