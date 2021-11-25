@@ -1,11 +1,13 @@
 const Discord = require('discord.js');
 var mysql = require('mysql2');  
 const env = require('dotenv').config()
-client.channels.cache.get('id')
+const schedule = require('node-schedule');
 
 
 
 const client = new Discord.Client({ partials: ["MESSAGE", "CHANNEL", "REACTION" ]});
+
+client.channels.cache.get('id')
 
 const prefix = process.env.PREFIX;
 
