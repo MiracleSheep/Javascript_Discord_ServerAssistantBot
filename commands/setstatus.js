@@ -36,7 +36,7 @@ module.exports = {
                 var args2 = message.content.substring(i+1)
 
                 //setting the status of the bot
-                client.user.setActivity(args3[0])
+                client.user.setActivity(args3[0],{ type: "WATCHING" }).catch(console.error)
             } catch (error) {
                 message.channel.send('There was an errror setting the status of the assistant bot.')
             }
