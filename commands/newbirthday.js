@@ -64,6 +64,7 @@ module.exports = {
                   con.query("INSERT INTO birthday VALUES(? ,?, ?,?,?);", [username, user, args3[1], channel, server], function(err, result) {
                       if (err) {
                           message.channel.send('There was an error setting the birthday.')
+                          console.log(err)
                       } else {
                           message.channel.send('The birthday was added successfully!')
                       }

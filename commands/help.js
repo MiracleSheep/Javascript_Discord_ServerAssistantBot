@@ -41,7 +41,7 @@ module.exports = {
               },
               {
                   name: "5: Add Birthday",
-                  value: "Do -badd <@user>(or type me for yourself) <date>",
+                  value: "Do -badd <@user>(or type me for yourself) <YYYY-MM-DD>",
                   inline: false,
               },
               {
