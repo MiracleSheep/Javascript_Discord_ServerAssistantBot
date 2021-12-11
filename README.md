@@ -6,7 +6,6 @@ This bot is meant to add a few helpful features to my discord server.
 Features include:
 * A help command which prints an embed explaining the commands
 * A ping command
-* A news command which adds/removes users from a group which gets pinged when there is news of the minecraft server
 * A web command which posts the link to a website.
 * An entire birthday system which allows birthdays to be set up and removed.
 
@@ -27,5 +26,8 @@ Features include:
 5. Build the image in the directory with ``docker build -t assistantbot .``
 6. Run the image ``docker run -d --name [insert name here] assistantbot``
 7. Enjoy!
+
+#### Note:
+This is primarily meant to be used with the minecraft webserver.
 
 
