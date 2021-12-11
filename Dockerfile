@@ -1,14 +1,16 @@
+# getting the latest node
 FROM node:latest
 
-# Create the directory!
+# Creating the directory
 RUN mkdir -p /usr/src/bot
 WORKDIR /usr/src/bot
 
-# Copy and Install our bot
+# copy/installing bot
 COPY package.json /usr/src/bot
 RUN npm install
 
-# Our precious bot
+# This is the bot
 COPY . /usr/src/bot
 
+# starting commands that are entered into the command line by the program
 CMD ["node", "index.js"]
