@@ -27,4 +27,7 @@ Features include:
 6. Run the image ``docker run -d --name [insert name here] assistantbot``
 7. Enjoy!
 
+#### Note:
+This is primarily meant to be used with the minecraft webserver.
+
 
