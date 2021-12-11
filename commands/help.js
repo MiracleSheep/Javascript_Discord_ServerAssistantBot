@@ -55,8 +55,8 @@ module.exports = {
                   inline: false,
               },
               {
-                  name: "8: Set Bot Status",
-                  value: "Do -setstatus <status>",
+                  name: "8: Get Server Map",
+                  value: "Do -map",
                   inline: false,
               },
           ],

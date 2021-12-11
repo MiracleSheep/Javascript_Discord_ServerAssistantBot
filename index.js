@@ -149,6 +149,8 @@ client.on('message', message => {
         client.commands.get('help').execute(message, args);
     } else if (command == 'web') {
         client.commands.get('link').execute(message, args);
+    } else if (command == 'map') {
+        client.commands.get('map').execute(message, args);
     } else if (command === 'baa') {
         client.commands.get('baa').execute(message, args, Discord, client);
     } else if (command === 'account') {
@@ -159,8 +161,6 @@ client.on('message', message => {
         client.commands.get('removebirthday').execute(message, args, con, Discord, client);
     } else if (command === 'bday') {
         client.commands.get('checkbirthday').execute(message, args, con, Discord, client);
-    } else if (command === 'setstatus') {
-        client.commands.get('setstatus').execute(message, args, Discord, client);
     } else if (command === 'blist') {
         client.commands.get('setstatus').execute(message, args, Discord, client);
     }
