@@ -12,6 +12,9 @@ module.exports = {
         //variable that holds the user id for the person who sent the message
         var user = message.author.id
 
+        //getting the location of the first space in the command
+        var i = message.content.indexOf(" ");
+
 
         //Checking if there is a space after the command to see if there are any parameters
         if (message.content.indexOf(" ") == undefined || message.content.indexOf(" ") == -1 || message.content.indexOf(" ") == null) {
