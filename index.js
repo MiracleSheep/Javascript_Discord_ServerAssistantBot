@@ -25,7 +25,8 @@ var con = mysql.createPool({
     user: process.env.MYSQL_USERNAME,
     password: process.env.MYSQL_ROOT_PASSWORD,
     port: process.env.MYSQL_LOCAL_PORT,
-    database: process.env.MYSQL_DATABASE
+    database: process.env.MYSQL_DATABASE,
+    dateStrings: true
 });
 
 //creating a collector for disscord commands
