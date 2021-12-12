@@ -58,9 +58,9 @@ module.exports = {
                       if (err) {
                           message.channel.send('There was an error getting the birthday.')
                       } else {
-                          console.log(result)
+                          console.log(result.toString())
                           try {
-                            message.channel.send('The birthday of the person you specified is ' + result)
+                            message.channel.send('The birthday of the person you specified is ' + result.toString())
                           } catch (error) {
                             message.channel.send('There was an error getting the birthday.')
                             console.log(error)
