@@ -4,6 +4,7 @@ var mysql = require('mysql2');
 const env = require('dotenv').config()
 const schedule = require('node-schedule');
 const fs = require('fs');
+var dateFormat = require('dateformat');
 
 
 //Creating discord client
@@ -26,7 +27,7 @@ var con = mysql.createPool({
     password: process.env.MYSQL_ROOT_PASSWORD,
     port: process.env.MYSQL_LOCAL_PORT,
     database: process.env.MYSQL_DATABASE,
-    dateStrings: true
+    //dateStrings: true
 });
 
 //creating a collector for disscord commands
