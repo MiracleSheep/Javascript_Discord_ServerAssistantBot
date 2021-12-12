@@ -161,8 +161,6 @@ client.on('message', message => {
         client.commands.get('removebirthday').execute(message, args, con, Discord, client);
     } else if (command === 'bday') {
         client.commands.get('checkbirthday').execute(message, args, con, Discord, client);
-    } else if (command === 'blist') {
-        client.commands.get('setstatus').execute(message, args, Discord, client);
     }
 });
 
