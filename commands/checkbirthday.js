@@ -54,7 +54,7 @@ module.exports = {
               //making a small shortcut if the person inputting the command wants their birthday to be addded
               if (args3[0] == "me") {
                   //getting the date
-                  con.query("SELECT date FROM birthday WHERE userid = ?", [user], function(err, result, fields) {
+                  con.query("SELECT DATE_FORMAT(date, '%Y-%m-%d') FROM birthday WHERE userid = ?", [user], function(err, result, fields) {
                       if (err) {
                           message.channel.send('There was an error getting the birthday.')
                       } else {
