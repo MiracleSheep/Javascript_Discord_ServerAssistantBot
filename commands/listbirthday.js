@@ -58,7 +58,7 @@ module.exports = {
                       if (err) {
                           message.channel.send('There was an error getting the birthday.')
                       } else {
-                          message.channel.send(result[0].date)
+                          message.channel.send(result[0])
                       }
                   });
 
@@ -83,7 +83,7 @@ module.exports = {
                       if (err) {
                           message.channel.send('There was an error getting the birthday.')
                       } else {
-                          message.channel.send(result[0].date)
+                          message.channel.send(result[0])
                       }
                   });
               }
