@@ -10,7 +10,7 @@ module.exports = {
 
 
       //variable that holds the username of the person who sent the command
-      var username = message.author.toString()
+      var username = message.author.username.toString()
 
       //variable that holds the user id for the person who sent the message
       var user = message.author.id

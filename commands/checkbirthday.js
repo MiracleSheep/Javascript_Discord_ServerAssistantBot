@@ -10,7 +10,7 @@ module.exports = {
 
 
       //variable that holds the username of the person who sent the command
-      var username = message.author.toString()
+      var username = message.author.username.toString()
 
       //variable that holds the user id for the person who sent the message
       var user = message.author.id
@@ -58,7 +58,6 @@ module.exports = {
                       if (err) {
                           message.channel.send('There was an error getting the birthday.')
                       } else {
-                          console.log(result[0].date.toString())
                           try {
                             message.channel.send('The birthday of the person you specified is ' + result[0].date.toString())
                           } catch (error) {
@@ -90,7 +89,12 @@ module.exports = {
                       if (err) {
                           message.channel.send('There was an error getting the birthday.')
                       } else {
-                          message.channel.send(result[0].date)
+                        try {
+                            message.channel.send('The birthday of the person you specified is ' + result[0].date.toString())
+                          } catch (error) {
+                            message.channel.send('There was an error getting the birthday.')
+                            console.log(error)
+                          }
                       }
                   });
               }

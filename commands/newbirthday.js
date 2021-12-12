@@ -10,7 +10,7 @@ module.exports = {
 
 
       //variable that holds the username of the person who sent the command
-      var username = message.author.toString()
+      var username = message.author.username.toString()
 
       //variable that holds the user id for the person who sent the message
       var user = message.author.id
@@ -55,6 +55,8 @@ module.exports = {
               //making a small shortcut if the person inputting the command wants their birthday to be addded
               if (args3[0] == "me") {
 
+                
+
                   //getting the channel id
                   channel = message.channel.id
 
@@ -75,10 +77,13 @@ module.exports = {
                   //making a try catch just in case fetching the user's info goes wrong
                   try {
 
+                      //getting the first mentionned user in the message
+                      targetuser = message.mentions.users.first()
+
                       //getting the user name from the first argument
-                      targetuser = message.guild.members.get(args3[0]).id
+                      targetuserid = targetuser.id
                       //getting the id from the first argument
-                      targetusername = message.guild.members.get(args3[0]).displayName
+                      targetusername = targetuser.username
                       //getting the channel id
                       channel = message.channel.id
 
