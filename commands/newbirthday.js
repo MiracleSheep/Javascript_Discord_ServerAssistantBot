@@ -36,11 +36,6 @@ module.exports = {
 
       }
 
-      //printing all the parameters of the command for testing purposes
-      console.log(args3[0])
-      console.log(args3[1])
-      console.log(args3.length)
-
 
 
       //checking if the user has the correct role to be allowed to use this command
@@ -82,8 +77,10 @@ module.exports = {
 
                       //getting the user name from the first argument
                       targetuserid = targetuser.id
+                      console.log(targetuserid)
                       //getting the id from the first argument
                       targetusername = targetuser.username
+                      console.log(targetusername)
                       //getting the channel id
                       channel = message.channel.id
 
