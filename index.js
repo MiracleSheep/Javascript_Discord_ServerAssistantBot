@@ -49,7 +49,7 @@ client.once('ready', () => {
 });
 
 //This is the cron function that checks birthdays everyday
-const job = schedule.scheduleJob('05 13 * * *', function() {
+const job = schedule.scheduleJob('40 8 * * *', function() {
     console.log("Time functuion called")
     check()
 })
@@ -58,7 +58,7 @@ const job = schedule.scheduleJob('05 13 * * *', function() {
 function check() {
 
     //making a query to get birthdays in 14 days
-    con.query("SELECT * FROM birthday WHERE date = DATE_ADD(CURRENT_DATE, INTERVAL 14 DAY)", function(err, result, fields) {
+    con.query("SELECT * FROM birthday WHERE DATE_FORMAT(date, '%m-%d') = DATE_FORMAT(DATE_ADD(CURRENT_DATE, INTERVAL 14 DAY, '%m-%d'));", function(err, result, fields) {
         if (err) {
             message.channel.send('There was an error getting the birthdays from the database.')
         } else {
@@ -83,7 +83,7 @@ function check() {
     });
 
     //making a query to get birthdays in 7 days
-    con.query("SELECT * FROM birthday WHERE date = DATE_ADD(CURRENT_DATE, INTERVAL 7 DAY)", function(err, result, fields) {
+    con.query("SELECT * FROM birthday WHERE DATE_FORMAT(date, '%m-%d') = DATE_FORMAT(DATE_ADD(CURRENT_DATE, INTERVAL 14 DAY, '%m-%d'));", function(err, result, fields) {
         if (err) {
             message.channel.send('There was an error getting the birthdays from the database.')
         } else {
@@ -106,7 +106,7 @@ function check() {
     });
 
     //making a query to get birthdays today
-    con.query("SELECT * FROM birthday WHERE date = CURRENT_DATE", function(err, result, fields) {
+    con.query("SELECT * FROM birthday WHERE DATE_FORMAT(date, '%m-%d') = DATE_FORMAT(DATE_ADD(CURRENT_DATE, INTERVAL 14 DAY, '%m-%d'));", function(err, result, fields) {
         if (err) {
             message.channel.send('There was an error getting the birthdays from the database.')
         } else {
