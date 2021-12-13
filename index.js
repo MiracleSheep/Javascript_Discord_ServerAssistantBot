@@ -58,7 +58,7 @@ const job = schedule.scheduleJob('45 8 * * *', function() {
 function check() {
 
     //making a query to get birthdays in 14 days
-    con.query("SELECT * FROM birthday WHERE DATE_FORMAT(date, '%m-%d') = DATE_FORMAT(DATE_ADD(CURRENT_DATE, INTERVAL 14 DAY, '%m-%d'));", function(err, result, fields) {
+    con.query("SELECT * FROM birthday WHERE DATE_FORMAT(date, '%m-%d') = DATE_FORMAT(DATE_ADD(CURRENT_DATE, INTERVAL 14 DAY), '%m-%d');", function(err, result, fields) {
         console.log("date query called")
         if (err) {
             message.channel.send('There was an error getting the birthdays from the database.')
@@ -84,7 +84,7 @@ function check() {
     });
 
     //making a query to get birthdays in 7 days
-    con.query("SELECT * FROM birthday WHERE DATE_FORMAT(date, '%m-%d') = DATE_FORMAT(DATE_ADD(CURRENT_DATE, INTERVAL 14 DAY, '%m-%d'));", function(err, result, fields) {
+    con.query("SELECT * FROM birthday WHERE DATE_FORMAT(date, '%m-%d') = DATE_FORMAT(DATE_ADD(CURRENT_DATE, INTERVAL 7 DAY), '%m-%d');", function(err, result, fields) {
         if (err) {
             message.channel.send('There was an error getting the birthdays from the database.')
         } else {
@@ -107,7 +107,7 @@ function check() {
     });
 
     //making a query to get birthdays today
-    con.query("SELECT * FROM birthday WHERE DATE_FORMAT(date, '%m-%d') = DATE_FORMAT(DATE_ADD(CURRENT_DATE, INTERVAL 14 DAY, '%m-%d'));", function(err, result, fields) {
+    con.query("SELECT * FROM birthday WHERE DATE_FORMAT(date, '%m-%d') = DATE_FORMAT(CURRENT_DATE, '%m-%d');", function(err, result, fields) {
         if (err) {
             message.channel.send('There was an error getting the birthdays from the database.')
         } else {
