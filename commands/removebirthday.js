@@ -69,10 +69,14 @@ module.exports = {
                   //making a try catch just in case fetching the user's info goes wrong
                   try {
 
+
+                      //getting the first mentionned user in the message
+                      targetuser = message.mentions.users.first()
+
                       //getting the user name from the first argument
-                      targetuser = message.guild.members.get(args3[0]).id
+                      targetuserid = targetuser.id
                       //getting the id from the first argument
-                      targetusername = message.guild.members.get(args3[0]).displayName
+                      targetusername = targetuser.username
 
 
                   } catch (error) {
@@ -81,7 +85,7 @@ module.exports = {
                   }
 
                   //making the query to the database
-                  con.query("DELETE FROM birthday WHERE userid = ?;", [user], function(err, result) {
+                  con.query("DELETE FROM birthday WHERE userid = ?;", [targetuserid], function(err, result) {
                       //error catching incase the request goes wrong
                       if (err) {
                           message.channel.send('There was an error removing the birthday.')
