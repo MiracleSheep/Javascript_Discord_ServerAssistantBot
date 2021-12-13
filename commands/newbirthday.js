@@ -76,10 +76,8 @@ module.exports = {
 
                       //getting the user name from the first argument
                       targetuserid = targetuser.id
-                      console.log(targetuserid)
                       //getting the id from the first argument
                       targetusername = targetuser.username
-                      console.log(targetusername)
                       //getting the channel id
                       channel = message.channel.id
 

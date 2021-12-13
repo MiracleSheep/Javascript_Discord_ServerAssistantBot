@@ -59,7 +59,6 @@ module.exports = {
                           message.channel.send('There was an error getting the birthday.')
                       } else {
                             message.channel.send('The birthday of the person you specified is ' + result[0].date.toString())
-                          
                       }
                   });
 
@@ -69,10 +68,13 @@ module.exports = {
                   //making a try catch just in case fetching the user's info goes wrong
                   try {
 
+                      //getting the first mentionned user in the message
+                      targetuser = message.mentions.users.first()
+
                       //getting the user name from the first argument
-                      targetuser = message.guild.members.get(args3[0]).id
+                      targetuserid = targetuser.id
                       //getting the id from the first argument
-                      targetusername = message.guild.members.get(args3[0]).displayName
+                      targetusername = targetuser.username
 
 
                   } catch (error) {
@@ -80,7 +82,7 @@ module.exports = {
                   }
 
                   //getting the date
-                  con.query("SELECT date FROM birthday WHERE userid = ?", [user], function(err, result, fields) {
+                  con.query("SELECT date FROM birthday WHERE userid = ?", [targetuserid], function(err, result, fields) {
                       if (err) {
                           message.channel.send('There was an error getting the birthday.')
                       } else {
