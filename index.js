@@ -61,8 +61,9 @@ function check() {
     con.query("SELECT * FROM birthday WHERE DATE_FORMAT(date, '%m-%d') = DATE_FORMAT(DATE_ADD(CURRENT_DATE, INTERVAL 14 DAY), '%m-%d');", function(err, result, fields) {
         console.log("date query called")
         if (err) {
-            message.channel.send('There was an error getting the birthdays from the database.')
+            console.log(err)
         } else {
+            console.log(result)
 
             //making a for loop to run through every entry in the results
             for (i = 0; i < result.length; i++) {
@@ -86,8 +87,9 @@ function check() {
     //making a query to get birthdays in 7 days
     con.query("SELECT * FROM birthday WHERE DATE_FORMAT(date, '%m-%d') = DATE_FORMAT(DATE_ADD(CURRENT_DATE, INTERVAL 7 DAY), '%m-%d');", function(err, result, fields) {
         if (err) {
-            message.channel.send('There was an error getting the birthdays from the database.')
+            console.log(err)
         } else {
+            console.log(result)
             //making a for loop to run through every entry in the results
             for (i = 0; i < result.length; i++) {
 
@@ -109,8 +111,9 @@ function check() {
     //making a query to get birthdays today
     con.query("SELECT * FROM birthday WHERE DATE_FORMAT(date, '%m-%d') = DATE_FORMAT(CURRENT_DATE, '%m-%d');", function(err, result, fields) {
         if (err) {
-            message.channel.send('There was an error getting the birthdays from the database.')
+            console.log(err)
         } else {
+            console.log(result)
             //making a for loop to run through every entry in the results
             for (i = 0; i < result.length; i++) {
 
