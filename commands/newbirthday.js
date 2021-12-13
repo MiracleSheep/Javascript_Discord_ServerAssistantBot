@@ -69,8 +69,7 @@ module.exports = {
                   //if the user does not want themselves
               } else {
 
-                  //making a try catch just in case fetching the user's info goes wrong
-                  try {
+
 
                       //getting the first mentionned user in the message
                       targetuser = message.mentions.users.first()
@@ -85,10 +84,7 @@ module.exports = {
                       channel = message.channel.id
 
 
-                  } catch (error) {
-                      message.channel.send("There was an error getting the information of the requested user")
-                      return
-                  }
+
 
                   //making the query to the database
                   con.query("INSERT INTO birthday VALUES(? ,? ,?,?);", [targetusername, targetuser, args3[1], channel], function(err, result) {
