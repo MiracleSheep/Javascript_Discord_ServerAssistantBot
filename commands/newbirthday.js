@@ -87,8 +87,8 @@ module.exports = {
 
 
                   //making the query to the database
-                //   con.query("INSERT INTO birthday VALUES(? ,? ,?,?);", [targetusername, targetuser, args3[1], channel], function(err, result) {
-                    con.query("INSERT INTO birthday VALUES(? ,? ,?,?);", [targetusername, "111", args3[1], channel], function(err, result) {
+                  con.query("INSERT INTO birthday VALUES(? ,? ,?,?);", [targetusername, targetuserid, args3[1], channel], function(err, result) {
+                    
                       //error catching incase the request goes wrong
                       if (err) {
                           message.channel.send('There was an error setting the birthday.')
