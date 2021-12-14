@@ -49,7 +49,7 @@ client.once('ready', () => {
 });
 
 //This is the cron function that checks birthdays everyday
-const job = schedule.scheduleJob('19 20 * * *', function() {
+const job = schedule.scheduleJob('34 20 * * *', function() {
     console.log("Time functuion called")
     check()
 })
@@ -171,8 +171,5 @@ client.on('message', message => {
 });
 
 //Gets token from env variables
-
-//calling check function for testing purposes
-check()
 
 client.login(process.env.DISCORD_TOKEN);
