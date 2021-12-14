@@ -49,7 +49,7 @@ client.once('ready', () => {
 });
 
 //This is the cron function that checks birthdays everyday
-const job = schedule.scheduleJob('12 21 * * *', function() {
+const job = schedule.scheduleJob('05 13 * * *', function() {
     console.log("Time functuion called")
     check()
 })
