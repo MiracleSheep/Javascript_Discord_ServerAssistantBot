@@ -72,7 +72,7 @@ function check() {
                 try {
 
                     channel = result[i].channelid
-                    client.channels.get(channel).send('It will be the bithday of @' + result[i].username + ' in 14 days');
+                    client.channels.cache.get(channel).send('It will be the bithday of @' + result[i].username + ' in 14 days');
 
                 } catch (error) {
                     console.log(error)
@@ -97,7 +97,7 @@ function check() {
                 try {
 
                     channel = result[i].channelid
-                    client.channels.get(channel).send('It will be the bithday of @' + result[i].username + ' in 7 days');
+                    client.channels.cache.get(channel).send('It will be the bithday of @' + result[i].username + ' in 7 days');
 
                 } catch (error) {
                     console.log(error)
@@ -121,7 +121,7 @@ function check() {
                 try {
 
                     channel = result[i].channelid
-                    client.channels.get(channel).send('@everyone Today is the bithday of @' + result[i].username + '!');
+                    client.channels.cache.get(channel).send('@everyone Today is the bithday of @' + result[i].username + '!');
 
                 } catch (error) {
                     console.log(error)
