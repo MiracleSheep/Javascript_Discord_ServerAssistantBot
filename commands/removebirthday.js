@@ -56,9 +56,9 @@ module.exports = {
                   //inserting the user's birthday into the database
                   con.query("DELETE FROM birthday WHERE userid = ?;", [user], function(err, result) {
                       if (err) {
-                          message.channel.send('There was an error removing the birthday.')
+                          message.channel.send('❗ There was an error removing the birthday.')
                       } else {
-                          message.channel.send('The birthday was removed successfully!')
+                          message.channel.send('✅ The birthday was removed successfully! (If there was one)')
                       }
 
                   })
@@ -88,9 +88,9 @@ module.exports = {
                   con.query("DELETE FROM birthday WHERE userid = ?;", [targetuserid], function(err, result) {
                       //error catching incase the request goes wrong
                       if (err) {
-                          message.channel.send('There was an error removing the birthday.')
+                          message.channel.send('❗ There was an error removing the birthday.')
                       } else {
-                          message.channel.send("The birthday was removed successfully!")
+                          message.channel.send("✅ The birthday was removed successfully! (If there was one)")
                       }
 
                   })

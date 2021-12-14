@@ -58,10 +58,10 @@ module.exports = {
                   //inserting the user's birthday into the database
                   con.query("INSERT INTO birthday VALUES(? ,?, ?,?);", [username, user, args3[1], channel], function(err, result) {
                       if (err) {
-                          message.channel.send('There was an error setting the birthday.')
+                          message.channel.send('❗ There was an error setting the birthday.')
                           console.log(err)
                       } else {
-                          message.channel.send('The birthday was added successfully!')
+                          message.channel.send('✅ The birthday was added successfully!')
                       }
 
                   })
@@ -89,10 +89,10 @@ module.exports = {
                     
                       //error catching incase the request goes wrong
                       if (err) {
-                          message.channel.send('There was an error setting the birthday.')
+                          message.channel.send('❗ There was an error setting the birthday.')
                           console.log(err)
                       } else {
-                          message.channel.send("The birthday was added successfully!")
+                          message.channel.send("✅ The birthday was added successfully!")
                       }
 
                   })

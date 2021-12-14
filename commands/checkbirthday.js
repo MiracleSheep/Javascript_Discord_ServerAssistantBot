@@ -56,9 +56,9 @@ module.exports = {
                   //getting the date
                   con.query("SELECT date FROM birthday WHERE userid = ?", [user], function(err, result, fields) {
                       if (err) {
-                          message.channel.send('There was an error getting the birthday.')
+                          message.channel.send('❗ There was an error getting the birthday.')
                       } else {
-                            message.channel.send('The birthday of the person you specified is ' + result[0].date.toString())
+                            message.channel.send('The birthday of <@' + targetuserid + '> is on ' + result[0].date.toString() + '. 🎉')
                       }
                   });
 
@@ -84,12 +84,12 @@ module.exports = {
                   //getting the date
                   con.query("SELECT date FROM birthday WHERE userid = ?", [targetuserid], function(err, result, fields) {
                       if (err) {
-                          message.channel.send('There was an error getting the birthday.')
+                          message.channel.send('❗ There was an error getting the birthday.')
                       } else {
                         try {
-                            message.channel.send('The birthday of the person you specified is ' + result[0].date.toString())
+                            message.channel.send('The birthday of <@' + targetuserid + '> is on ' + result[0].date.toString() + '. 🎉' )
                           } catch (error) {
-                            message.channel.send('There was an error getting the birthday.')
+                            message.channel.send('❗ There was an error getting the birthday.')
                             console.log(error)
                           }
                       }
