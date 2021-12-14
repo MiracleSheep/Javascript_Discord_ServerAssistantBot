@@ -37,7 +37,7 @@ module.exports = {
                       message.channel.send('There was an error creating your account.')
                   } else {
                       //Returning a success message to the user
-                      message.channel.send(user + ',your account was created successfully!')
+                      message.channel.send('<@' + user + '>, your account was created successfully!')
                   }
 
               })
