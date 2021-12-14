@@ -172,5 +172,7 @@ client.on('message', message => {
 
 //Gets token from env variables
 
+//calling check function for testing purposes
+check()
 
 client.login(process.env.DISCORD_TOKEN);
