@@ -58,7 +58,7 @@ module.exports = {
                       if (err) {
                           message.channel.send('❗ There was an error getting the birthday.')
                       } else {
-                            message.channel.send('The birthday of <@' + targetuserid + '> is on ' + result[0].date.toString() + '. 🎉')
+                            message.channel.send('The birthday of <@' + user + '> is on ' + result[0].date.toString() + '. 🎉')
                       }
                   });
 
