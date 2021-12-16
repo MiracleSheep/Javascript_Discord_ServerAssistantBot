@@ -38,27 +38,7 @@ module.exports = {
                   name: "4: Account Request",
                   value: "Do -account <username>;<password>",
                   inline: false,
-              },
-              {
-                  name: "5: Add Birthday",
-                  value: "Do -badd <@user>(or type me for yourself) <YYYY-MM-DD>",
-                  inline: false,
-              },
-              {
-                  name: "6: Remove Birthday",
-                  value: "Do -brm <@user>(or type me for yourself)",
-                  inline: false,
-              },
-              {
-                  name: "7: When is a Birthday",
-                  value: "Do -bday <@user>(or type me for yourself)",
-                  inline: false,
-              },
-              {
-                  name: "8: Get Server Map",
-                  value: "Do -map",
-                  inline: false,
-              },
+              }
           ],
           // image: {
           //   url: 'https://i.imgur.com/wSTFkRM.png',
